@@ -4,16 +4,7 @@ import Image from 'next/image'
 import styles from './page.module.css'
 import SSRProvider from 'react-bootstrap/SSRProvider';
 
-
-import Box from '@mui/material/Box';
-import TextField from '@mui/material/TextField';
-
-import MailOutlineIcon from '@mui/icons-material/MailOutline';
-import LockIcon from '@mui/icons-material/Lock';
-import VisibilityIcon from '@mui/icons-material/Visibility';
 import LoginIcon from '@mui/icons-material/Login';
-
-import FacebookIcon from '@mui/icons-material/Facebook';
 import { FaFacebookF, FaGoogle, FaTwitter, FaEye, FaLock ,FaEnvelope   } from "react-icons/fa";
 
 import { Container, Row, Col, InputGroup, Form, Button } from 'react-bootstrap';
@@ -51,7 +42,7 @@ export default function Home() {
                 priority
               />
             </div>
-            <div style={{ width: '60%' }}>
+            <div className={styles.formWrap}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <h3 style={{ color: '#E1E2E2', fontSize: 18, fontWeight: 'bold' }}>LOG IN</h3>
                 <Image
