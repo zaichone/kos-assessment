@@ -36,6 +36,7 @@
 
 .cover {
   background: url(/cover.png)center center no-repeat;
+  background-size:cover;
   border-radius: 10px;
 
 }
