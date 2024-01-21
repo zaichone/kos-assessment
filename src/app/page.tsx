@@ -1,95 +1,113 @@
+"use client"
 import Image from 'next/image'
+
 import styles from './page.module.css'
+import SSRProvider from 'react-bootstrap/SSRProvider';
+
+
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
+
+import MailOutlineIcon from '@mui/icons-material/MailOutline';
+import LockIcon from '@mui/icons-material/Lock';
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import LoginIcon from '@mui/icons-material/Login';
+
+import FacebookIcon from '@mui/icons-material/Facebook';
+import { FaFacebookF, FaGoogle, FaTwitter, FaEye, FaLock ,FaEnvelope   } from "react-icons/fa";
+
+import { Container, Row, Col, InputGroup, Form, Button } from 'react-bootstrap';
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <SSRProvider>
+      <main className={styles.main}>
+        <div className={styles.mainInner}>
+          <div className={styles.cover}>
+
+            <div>
+
+              <Image
+                src="/logoHeader.png"
+                alt="Logo"
+                className={styles.logoHeader}
+                width={276}
+                height={30}
+                priority
+              />
+
+            </div>
+          </div>
+
+          <div className={styles.contact}>
+
+            <div>
+              <Image
+                src="/sticker.png"
+                alt="Sticker"
+                className={styles.sticker}
+                width={80}
+                height={80}
+                priority
+              />
+            </div>
+            <div style={{ width: '60%' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <h3 style={{ color: '#E1E2E2', fontSize: 18, fontWeight: 'bold' }}>LOG IN</h3>
+                <Image
+                  src="/Hamburger Button.png"
+                  alt="Hamburger Button"
+
+                  width={40}
+                  height={40}
+                  priority
+                />
+              </div>
+              <hr />
+              <h4>Email address</h4>
+              <InputGroup className="mb-3">
+                <InputGroup.Text><FaEnvelope  /></InputGroup.Text>
+                <Form.Control aria-label="Email" placeholder="Email" />
+
+              </InputGroup>
+              <h4>Password</h4>
+              <InputGroup className="mb-1">
+                <InputGroup.Text><FaLock  /></InputGroup.Text>
+                <Form.Control aria-label="Password" placeholder="Password" />
+                <InputGroup.Text><FaEye  /></InputGroup.Text>
+              </InputGroup>
+              <h4 className="mt-2">A number or symbol, atleast 6 characters</h4>
+              <div className="mt-3 formFooter">
+                <button className="register">Register</button>
+                <button className="login"><LoginIcon />Login</button>
+              </div>
+              <h4 className="text-end mt-2 mb-2">Forgot password?</h4>
+              <div className="mt-3 d-flex justify-content-between options">
+                <h4>OR Log in with</h4>
+                <hr />
+              </div>
+              <div className="socials mt-5">
+                <span><FaFacebookF /></span>
+                <span> <FaGoogle /></span>
+                <span> <FaTwitter /></span>
+                <span> <Image
+                  src="/fox.svg"
+                  alt="Fox face"
+                  className={styles.logoHeader}
+                  width={25}
+                  height={25}
+                  priority
+                /></span>
+              </div>
+
+            </div>
+            <div className={styles.credit}>
+              <p>Copyright 2022 © Nakamoto Games</p>
+            </div>
+          </div>
+
         </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+      </main>
+    </SSRProvider>
   )
 }
